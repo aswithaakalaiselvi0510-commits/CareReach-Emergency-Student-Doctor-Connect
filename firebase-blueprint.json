@@ -1,0 +1,155 @@
+{
+  "entities": {
+    "StudentProfile": {
+      "title": "StudentProfile",
+      "description": "Student health & dormitory identity profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "role": { "type": "string", "enum": ["STUDENT"] },
+        "age": { "type": "number" },
+        "college": { "type": "string" },
+        "hostelName": { "type": "string" },
+        "hostelRoom": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "role", "hostelName"]
+    },
+    "FcmToken": {
+      "title": "FcmToken",
+      "description": "Firebase Cloud Messaging device registration token",
+      "type": "object",
+      "properties": {
+        "token": { "type": "string" },
+        "studentId": { "type": "string" },
+        "platform": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["token", "studentId"]
+    },
+    "DoctorProfile": {
+      "title": "DoctorProfile",
+      "description": "Physician credential and live availability profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["DOCTOR"] },
+        "specialization": { "type": "string" },
+        "qualification": { "type": "string" },
+        "licenseNumber": { "type": "string" },
+        "verificationStatus": { "type": "string", "enum": ["PENDING", "VERIFIED", "REJECTED"] },
+        "status": { "type": "string", "enum": ["AVAILABLE", "BUSY", "OFFLINE"] }
+      },
+      "required": ["id", "name", "email", "role", "specialization", "licenseNumber", "verificationStatus", "status"]
+    },
+    "EmergencyRequest": {
+      "title": "EmergencyRequest",
+      "description": "Student emergency & triage request",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "severity": { "type": "string", "enum": ["MILD", "MODERATE", "SEVERE", "CRITICAL"] },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "studentId", "studentName", "severity", "status", "createdAt"]
+    },
+    "Consultation": {
+      "title": "Consultation",
+      "description": "Active or concluded tele-triage workspace between student and doctor",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "requestId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "status": { "type": "string", "enum": ["ACTIVE", "COMPLETED", "CANCELLED"] },
+        "startedAt": { "type": "string" }
+      },
+      "required": ["id", "requestId", "studentId", "doctorId", "status", "startedAt"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "Chat message inside a consultation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "consultationId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderRole": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "consultationId", "senderId", "senderRole", "text", "timestamp"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "Scheduled clinic or campus dispensary follow-up appointment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentId": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "facilityName": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "studentId", "doctorId", "facilityName", "date", "time", "status"]
+    },
+    "MedicalRecord": {
+      "title": "MedicalRecord",
+      "description": "Encrypted health document in student vault",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentId": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "sharedWithDoctor": { "type": "boolean" },
+        "uploadedAt": { "type": "string" }
+      },
+      "required": ["id", "studentId", "title", "category", "sharedWithDoctor", "uploadedAt"]
+    }
+  },
+  "firestore": {
+    "/students/{studentId}": {
+      "schema": "StudentProfile",
+      "description": "Student profiles collection"
+    },
+    "/students/{studentId}/fcmTokens/{tokenId}": {
+      "schema": "FcmToken",
+      "description": "FCM device push tokens"
+    },
+    "/doctors/{doctorId}": {
+      "schema": "DoctorProfile",
+      "description": "Doctors directory and status"
+    },
+    "/emergencyRequests/{requestId}": {
+      "schema": "EmergencyRequest",
+      "description": "Student emergency request stream"
+    },
+    "/consultations/{consultationId}": {
+      "schema": "Consultation",
+      "description": "Consultation sessions"
+    },
+    "/consultations/{consultationId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Messages subcollection in consultation"
+    },
+    "/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Scheduled appointments"
+    },
+    "/medicalRecords/{recordId}": {
+      "schema": "MedicalRecord",
+      "description": "Medical records vault"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "CareReach - Emergency Student Doctor Connect",
+  "description": "Location-aware emergency doctor-connect and next-day appointment platform for hostel and college students.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

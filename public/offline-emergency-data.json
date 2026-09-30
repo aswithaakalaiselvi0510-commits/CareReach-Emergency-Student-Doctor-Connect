@@ -1,0 +1,93 @@
+{
+  "lastSynced": "2026-09-29T16:30:00.000Z",
+  "campusEmergencyContacts": [
+    {
+      "title": "National Emergency Ambulance",
+      "phone": "108",
+      "available": "24/7 Toll-Free",
+      "priority": "CRITICAL"
+    },
+    {
+      "title": "National Emergency Services",
+      "phone": "112",
+      "available": "24/7 Toll-Free",
+      "priority": "CRITICAL"
+    },
+    {
+      "title": "Campus Infirmary / Night Doctor",
+      "phone": "+91 80 2345 6701",
+      "available": "24/7 On-Call",
+      "priority": "HIGH"
+    },
+    {
+      "title": "Hostel Chief Warden (Prof. Murugan)",
+      "phone": "+91 94432 10987",
+      "available": "24/7 Immediate Hostel Access",
+      "priority": "HIGH"
+    },
+    {
+      "title": "Campus Security & Ambulance Gate 1",
+      "phone": "+91 80 2345 6799",
+      "available": "24/7 Gate Barrier Clearance",
+      "priority": "MEDIUM"
+    }
+  ],
+  "facilities": [
+    {
+      "id": "fac-1",
+      "name": "Campus Health Centre & Dispensary",
+      "type": "CAMPUS_HEALTH_CENTRE",
+      "address": "Opposite Kaveri Hostel Block, Ground Floor Central Quad",
+      "phone": "+91 80 2345 6701",
+      "distanceKm": 0.4,
+      "isOpen24x7": false,
+      "openingHours": "8:00 AM - 10:00 PM (Emergency Nurse On-Call 24/7)",
+      "services": ["General Consultation", "First Aid", "Vitals Screening", "Nebulization", "Free Student Medicines"],
+      "walkTimeMinutes": 5
+    },
+    {
+      "id": "fac-2",
+      "name": "City Care 24/7 Trauma Emergency Hospital",
+      "type": "EMERGENCY_HOSPITAL",
+      "address": "Outer Ring Road, Sector 2 (Directly opposite University Gate 1)",
+      "phone": "+91 80 4000 9999",
+      "distanceKm": 2.8,
+      "isOpen24x7": true,
+      "openingHours": "Open 24 Hours / 7 Days",
+      "services": ["Emergency Trauma Bay", "ICU", "Digital X-Ray", "Emergency Surgery", "Pathology Lab"],
+      "walkTimeMinutes": 32
+    },
+    {
+      "id": "fac-3",
+      "name": "MedPlus 24-Hour Campus Pharmacy & First-Aid",
+      "type": "PHARMACY",
+      "address": "Gate 2 High Street, Shop #4",
+      "phone": "+91 80 2890 1122",
+      "distanceKm": 0.6,
+      "isOpen24x7": true,
+      "openingHours": "Open 24 Hours",
+      "services": ["Prescription Dispensing", "ORS & Hydration", "Bandages & Splints", "Cold Medicine", "Thermometers"],
+      "walkTimeMinutes": 7
+    },
+    {
+      "id": "fac-4",
+      "name": "St. John's Community Medical Centre",
+      "type": "COMMUNITY_CLINIC",
+      "address": "East Campus Avenue, 4th Block",
+      "phone": "+91 80 3456 7890",
+      "distanceKm": 1.9,
+      "isOpen24x7": false,
+      "openingHours": "7:00 AM - 11:00 PM",
+      "services": ["Outpatient Care", "IV Hydration Lounge", "Blood Tests", "ECG", "Minor Suturing"],
+      "walkTimeMinutes": 22
+    }
+  ],
+  "emergencyRedFlags": [
+    "Severe crushing chest pain or tightness",
+    "Difficulty breathing or gasping for air",
+    "Loss of consciousness, fainting, or head injury",
+    "Uncontrolled or rapid blood loss",
+    "Facial drooping, arm weakness, or slurred speech",
+    "Acute anaphylaxis / severe throat swelling"
+  ]
+}

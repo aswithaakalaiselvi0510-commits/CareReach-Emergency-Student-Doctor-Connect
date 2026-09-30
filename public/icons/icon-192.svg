@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="42" fill="#0284c7" />
+  <!-- Medical Cross with Heart and Location Pulse -->
+  <circle cx="96" cy="96" r="68" fill="#0369a1" />
+  <rect x="80" y="44" width="32" height="104" rx="8" fill="#ffffff" />
+  <rect x="44" y="80" width="104" height="32" rx="8" fill="#ffffff" />
+  <!-- Small emergency beacon pulse in center -->
+  <circle cx="96" cy="96" r="14" fill="#0284c7" />
+  <path d="M96 88 C93 83 86 84 86 89 C86 94 96 102 96 102 C96 102 106 94 106 89 C106 84 99 83 96 88 Z" fill="#ffffff" />
+</svg>
